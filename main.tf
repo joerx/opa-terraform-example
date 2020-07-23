@@ -24,8 +24,8 @@ provider "aws" {
   profile = "yodo"
 }
 
-resource "aws_s3_bucket" "b" {
-  bucket_prefix = "opa-test-bucket-"
+resource "aws_s3_bucket" "b1" {
+  bucket_prefix = "opa-test-bucket1-"
   acl           = "public"
 
   tags = {
@@ -46,8 +46,19 @@ resource "aws_s3_bucket" "b2" {
 }
 
 resource "aws_s3_bucket" "b3" {
-  bucket_prefix = "opa-test-bucket2-"
+  bucket_prefix = "opa-test-bucket3-"
   acl           = "private"
+}
+
+resource "aws_s3_bucket" "b4" {
+  bucket_prefix = "opa-test-bucket4-"
+  acl           = "private"
+
+  tags = {
+    Service     = "example-service"
+    Owner       = "me"
+    Environment = "Dev"
+  }
 }
 
 data "aws_ami" "ubuntu" {
