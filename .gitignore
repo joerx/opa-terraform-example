@@ -1,0 +1,3 @@
+*.bin
+plan.json
+.terraform

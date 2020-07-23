@@ -1,0 +1,17 @@
+{
+    "type": "s3_bucket",
+    "address": "module.foo.my_bucket",
+    "change": {
+        "actions": [
+            "create"
+        ],
+        "after": {
+            "acl": "public",
+            "bucket_prefix": "opa-test-bucket-",
+            "tags": {
+                "Environment": "Dev",
+                "Name": "My bucket"
+            }
+        }
+    }
+}
